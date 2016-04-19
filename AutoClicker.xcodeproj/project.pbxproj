@@ -10,14 +10,19 @@
 		1613976D1CC6102000184B87 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1613976C1CC6102000184B87 /* AppDelegate.swift */; };
 		1613976F1CC6102000184B87 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1613976E1CC6102000184B87 /* Assets.xcassets */; };
 		161397721CC6102000184B87 /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 161397701CC6102000184B87 /* MainMenu.xib */; };
+		BBCA171D54850ADFC46F0F77 /* Pods_AutoClicker.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0BA1AEC6BFDE5BBB2712ED91 /* Pods_AutoClicker.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		0BA1AEC6BFDE5BBB2712ED91 /* Pods_AutoClicker.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_AutoClicker.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		161397691CC6102000184B87 /* AutoClicker.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AutoClicker.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1613976C1CC6102000184B87 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		1613976E1CC6102000184B87 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		161397711CC6102000184B87 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/MainMenu.xib; sourceTree = "<group>"; };
 		161397731CC6102000184B87 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		1613977A1CC61B9200184B87 /* Swift_bridge.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Swift_bridge.h; sourceTree = "<group>"; };
+		26D2FE19EE29C2FAEAD02B2B /* Pods-AutoClicker.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AutoClicker.debug.xcconfig"; path = "Pods/Target Support Files/Pods-AutoClicker/Pods-AutoClicker.debug.xcconfig"; sourceTree = "<group>"; };
+		2CB88A2AFD7A31CBA6115BAC /* Pods-AutoClicker.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AutoClicker.release.xcconfig"; path = "Pods/Target Support Files/Pods-AutoClicker/Pods-AutoClicker.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -25,6 +30,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BBCA171D54850ADFC46F0F77 /* Pods_AutoClicker.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -34,8 +40,11 @@
 		161397601CC6102000184B87 = {
 			isa = PBXGroup;
 			children = (
+				1613977A1CC61B9200184B87 /* Swift_bridge.h */,
 				1613976B1CC6102000184B87 /* AutoClicker */,
 				1613976A1CC6102000184B87 /* Products */,
+				3C58314E42F7FD84E6B9A4CA /* Pods */,
+				D53D03DFFF566454F5FD4191 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -58,6 +67,23 @@
 			path = AutoClicker;
 			sourceTree = "<group>";
 		};
+		3C58314E42F7FD84E6B9A4CA /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				26D2FE19EE29C2FAEAD02B2B /* Pods-AutoClicker.debug.xcconfig */,
+				2CB88A2AFD7A31CBA6115BAC /* Pods-AutoClicker.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		D53D03DFFF566454F5FD4191 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				0BA1AEC6BFDE5BBB2712ED91 /* Pods_AutoClicker.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -65,9 +91,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 161397761CC6102000184B87 /* Build configuration list for PBXNativeTarget "AutoClicker" */;
 			buildPhases = (
+				A510553A743462EC35D276B3 /* 📦 Check Pods Manifest.lock */,
 				161397651CC6102000184B87 /* Sources */,
 				161397661CC6102000184B87 /* Frameworks */,
 				161397671CC6102000184B87 /* Resources */,
+				75A2548A97ABB43807F4DB4D /* 📦 Embed Pods Frameworks */,
+				8F6DB299BE4713E696E6AF22 /* 📦 Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -90,6 +119,7 @@
 				TargetAttributes = {
 					161397681CC6102000184B87 = {
 						CreatedOnToolsVersion = 7.2.1;
+						DevelopmentTeam = VMHKH296QT;
 					};
 				};
 			};
@@ -122,6 +152,54 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		75A2548A97ABB43807F4DB4D /* 📦 Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "📦 Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-AutoClicker/Pods-AutoClicker-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		8F6DB299BE4713E696E6AF22 /* 📦 Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "📦 Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-AutoClicker/Pods-AutoClicker-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		A510553A743462EC35D276B3 /* 📦 Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "📦 Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		161397651CC6102000184B87 /* Sources */ = {
@@ -163,7 +241,7 @@
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				CODE_SIGN_IDENTITY = "-";
+				CODE_SIGN_IDENTITY = "";
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
@@ -186,6 +264,7 @@
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = macosx;
+				SWIFT_OBJC_BRIDGING_HEADER = Swift_bridge.h;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
 			name = Debug;
@@ -207,7 +286,7 @@
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				CODE_SIGN_IDENTITY = "-";
+				CODE_SIGN_IDENTITY = "";
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_NS_ASSERTIONS = NO;
@@ -223,30 +302,36 @@
 				MACOSX_DEPLOYMENT_TARGET = 10.10;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = macosx;
+				SWIFT_OBJC_BRIDGING_HEADER = Swift_bridge.h;
 			};
 			name = Release;
 		};
 		161397771CC6102000184B87 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 26D2FE19EE29C2FAEAD02B2B /* Pods-AutoClicker.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				COMBINE_HIDPI_IMAGES = YES;
 				INFOPLIST_FILE = AutoClicker/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = grumblesmurf.AutoClicker;
+				MACOSX_DEPLOYMENT_TARGET = 10.9;
+				PRODUCT_BUNDLE_IDENTIFIER = org.grumblesmurf.AutoClicker;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Debug;
 		};
 		161397781CC6102000184B87 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 2CB88A2AFD7A31CBA6115BAC /* Pods-AutoClicker.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				COMBINE_HIDPI_IMAGES = YES;
 				INFOPLIST_FILE = AutoClicker/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = grumblesmurf.AutoClicker;
+				MACOSX_DEPLOYMENT_TARGET = 10.9;
+				PRODUCT_BUNDLE_IDENTIFIER = org.grumblesmurf.AutoClicker;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				"SWIFT_OBJC_BRIDGING_HEADER[arch=*]" = "";
 			};
 			name = Release;
 		};
@@ -269,6 +354,7 @@
 				161397781CC6102000184B87 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
