@@ -15,8 +15,8 @@ class AppDelegate: NSObject, NSApplicationDelegate, NSWindowDelegate {
     @IBOutlet weak var statusMenu: NSMenu!
     @IBOutlet weak var shortcutView: MASShortcutView!
 
-    @IBOutlet weak var intervalLabel: NSTextField!
-    @IBOutlet weak var intervalSlider: NSSlider!
+    @IBOutlet weak var speedLabel: NSTextField!
+    @IBOutlet weak var speedSlider: NSSlider!
     
     var prefsActive: Bool = false
     
@@ -26,9 +26,10 @@ class AppDelegate: NSObject, NSApplicationDelegate, NSWindowDelegate {
     
     let defaults = NSUserDefaults.standardUserDefaults()
 
-    @IBAction func intervalChanged(sender: NSSlider) {
-        intervalLabel.stringValue = String(sender.intValue)
-        defaults.setInteger(sender.integerValue, forKey: intervalKey)
+    @IBAction func speedChanged(sender: NSSlider) {
+        let clicksPerSecond = sender.integerValue
+        speedLabel.stringValue = "\(clicksPerSecond) clicks/s"
+        defaults.setInteger(1000 / clicksPerSecond, forKey: intervalKey)
     }
     
     @IBAction func quitClicked(sender: NSMenuItem) {
@@ -57,7 +58,8 @@ class AppDelegate: NSObject, NSApplicationDelegate, NSWindowDelegate {
     
     func toggleClicking() {
         if timer == nil {
-            timer = NSTimer.scheduledTimerWithTimeInterval(intervalSlider.doubleValue / 1000, target: self, selector: Selector("click"), userInfo: nil, repeats: true)
+            let interval = defaults.doubleForKey(intervalKey)
+            timer = NSTimer.scheduledTimerWithTimeInterval(interval / 1000, target: self, selector: Selector("click"), userInfo: nil, repeats: true)
         } else {
             timer?.invalidate()
             timer = nil
@@ -79,10 +81,12 @@ class AppDelegate: NSObject, NSApplicationDelegate, NSWindowDelegate {
         statusItem.menu = statusMenu
         shortcutView.associatedUserDefaultsKey = shortcutKey
         
+        defaults.registerDefaults([ intervalKey: 1000 ])
         
+        let clicksPerSecond = 1000 / defaults.integerForKey(intervalKey)
         
-        intervalSlider.integerValue = max(defaults.integerForKey(intervalKey), Int(intervalSlider.minValue))
-        intervalChanged(intervalSlider)
+        speedSlider.integerValue = max(clicksPerSecond, Int(speedSlider.minValue))
+        speedChanged(speedSlider)
         
         preferencesWindow.delegate = self
         preferencesWindow.level = Int(CGWindowLevelForKey(.FloatingWindowLevelKey))

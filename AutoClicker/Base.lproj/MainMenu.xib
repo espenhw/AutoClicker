@@ -14,10 +14,10 @@
         <customObject id="-3" userLabel="Application" customClass="NSObject"/>
         <customObject id="Voe-Tx-rLC" customClass="AppDelegate" customModule="AutoClicker" customModuleProvider="target">
             <connections>
-                <outlet property="intervalLabel" destination="ygm-P8-8O4" id="vsc-tl-Ocs"/>
-                <outlet property="intervalSlider" destination="2CA-ED-Yl8" id="WdF-Nd-20E"/>
                 <outlet property="preferencesWindow" destination="lzH-cT-guj" id="msM-6h-xWX"/>
                 <outlet property="shortcutView" destination="fH4-6y-Rml" id="shB-vc-RGP"/>
+                <outlet property="speedLabel" destination="ygm-P8-8O4" id="ZY9-Wl-bCk"/>
+                <outlet property="speedSlider" destination="2CA-ED-Yl8" id="t9b-ot-tvH"/>
                 <outlet property="statusMenu" destination="IiO-fY-ySy" id="hn7-YY-idI"/>
             </connections>
         </customObject>
@@ -49,7 +49,7 @@
                 <subviews>
                     <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" setsMaxLayoutWidthAtFirstLayout="YES" translatesAutoresizingMaskIntoConstraints="NO" id="rxo-Ni-KUF">
                         <rect key="frame" x="18" y="126" width="62" height="17"/>
-                        <textFieldCell key="cell" sendsActionOnEndEditing="YES" title="Shortcut:" id="81l-Nt-r0o">
+                        <textFieldCell key="cell" sendsActionOnEndEditing="YES" alignment="right" title="Shortcut:" id="81l-Nt-r0o">
                             <font key="font" metaFont="system"/>
                             <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
                             <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
@@ -60,14 +60,14 @@
                     </customView>
                     <slider verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="2CA-ED-Yl8">
                         <rect key="frame" x="84" y="97" width="142" height="21"/>
-                        <sliderCell key="cell" continuous="YES" state="on" alignment="left" minValue="25" maxValue="1000" doubleValue="50" tickMarkPosition="above" sliderType="linear" id="6Tl-Xw-jhV"/>
+                        <sliderCell key="cell" continuous="YES" state="on" alignment="left" minValue="1" maxValue="40" doubleValue="40" tickMarkPosition="above" sliderType="linear" id="6Tl-Xw-jhV"/>
                         <connections>
-                            <action selector="intervalChanged:" target="Voe-Tx-rLC" id="ZIo-t7-zmC"/>
+                            <action selector="speedChanged:" target="Voe-Tx-rLC" id="yIK-8c-1Gu"/>
                         </connections>
                     </slider>
                     <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" setsMaxLayoutWidthAtFirstLayout="YES" translatesAutoresizingMaskIntoConstraints="NO" id="B7r-iD-Zmi">
                         <rect key="frame" x="18" y="101" width="62" height="17"/>
-                        <textFieldCell key="cell" sendsActionOnEndEditing="YES" title="Interval:" id="LdH-XK-YBm">
+                        <textFieldCell key="cell" sendsActionOnEndEditing="YES" alignment="right" title="Speed:" id="LdH-XK-YBm">
                             <font key="font" metaFont="system"/>
                             <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
                             <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
